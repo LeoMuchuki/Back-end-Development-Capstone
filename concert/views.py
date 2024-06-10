@@ -37,9 +37,9 @@ def index(request):
 def songs(request):
     # songs = {"songs":[]}
     # return render(request, "songs.html", {"songs": [insert list here]})
-    #pass
-        
+    #pass   
     songs = {"songs":[{"id":1,"title":"duis faucibus accumsan odio curabitur convallis","lyrics":"Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis."}]}
+
     return render(request, "songs.html", {"songs":songs["songs"]})
 
 
@@ -87,10 +87,10 @@ def concerts(request):
             
             except:
                 status = "-"
-                concerts_list.append({
-                    "concert": item,
-                    "status": status
-                })
+            concerts_list.append({
+                "concert": item,
+                "status": status
+            })
 
         return render(request, "concerts.html", {"concerts": concerts_list})
     else:
